@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Select Elements</title>
+    <style>
+        select {
+            display: block;
+            padding: 4px;
+            border: 1px solid #000000;
+            border-radius: 10px;
+            background: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select is an input with nested elements</h1>
+    <h2>Basic idea</h2>
+    <select name="" id="">
+        <option value="">Option 1</option>
+        <option value="">Option 2</option>
+        <option value="">Option 3</option>
+    </select>
+    <h2>Example 1</h2>
+    <label for="countries">What country would you like to travel to?</label>
+    <form action="/submit">
+        <select name="" id="countries">
+            <option value="">Select a country</option>
+            <option value="france">France</option>
+            <option value="japan">Japan</option>
+            <option value="uk">United Kingdom</option>
+            <option value="india">India</option>
+            <option value="canada">Canada</option>
+        </select>
+    </form>
+    <!--We are going to use JS for our project, the form won't be necessary.-->
+    <script>
+        function showSelectedCountry(event) {
+            if(event.target.value.length > 0) {
+            //console.log(event.target.value);
+            if(event.target.value == "france") {
+                alert("Bonjour!");
+            } if(event.target.value == "japan") {
+                alert("Konnichiwa!");
+            } if(event.target.value == "india") {
+                alert("Namaste!");
+            } if(event.target.value =="uk" || event.target.value =="canada") {
+                alert("Hello!");
+            }
+            }
+        }
+
+        let countriesSelect = document.querySelector("#countries")
+        //console.log(countriesSelect);
+        //console.log(countriesSelect.value);
+        countriesSelect.addEventListener("change",showSelectedCountry)
+        
+    </script>
+</body>
+</html>

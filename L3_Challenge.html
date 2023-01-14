@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L3 Challenge</title>
+</head>
+<body>
+    <h1>HTML Select Element</h1>
+    <hr>
+
+    <h3>Challenge 1</h3>
+    <p>
+      Create a select element inside a form with 5 fruits as an option and label
+      "What is your favorite fruit?"
+    </p>
+    <h4>Solution</h4>
+    <label for="fruits">What is your favourite fruit?</label>
+    <select name="" id="fruits">
+        <option value="" selected><i>Select a fruit</i></option>
+        <option value="watermelon">Watermelon🍉</option>
+        <option value="apple">Apple🍏</option>
+        <option value="grape">Grape🍇</option>
+        <option value="lemon">Lemon🍋</option>
+        <option value="peach">Peach🍑</option>
+    </select>
+
+    <hr>
+    <h3>Challenge 2</h3>
+    <p>
+      Create a select element with the 3 primary colors, when the user selects
+      red, alert the emoji ❤️, when the user selects blue, alert the emoji 💙
+      and the the user selects yellow, alert 💛. Include an empty option which
+      is selected by default.
+    </p>
+    <h4>Solution</h4>
+    <label for="colours">What is your favourite primary colour?</label>
+    <select name="" id="colours">
+        <option value="" selected><i>Select a colour</i></option>
+        <option value="yellow">Yellow</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+    </select>
+    <br>
+    <br>
+    <div class="colour"></div>
+
+    <script>
+        function colourPrompt(event) {
+            let updateColour = document.querySelector(".colour")
+            if(event.target.value.length > 0) {
+            //console.log(event.target.value);
+                if(event.target.value == "yellow") {
+                    alert("💛💛💛")
+                    updateColour.innerHTML = "You have selected yellow. 💛"
+                }
+                if(event.target.value == "red") {
+                    alert("💖💖💖")
+                    updateColour.innerHTML = "You have selected red. 💖"
+                }                
+                if(event.target.value == "blue") {
+                    alert("💙💙💙")
+                    updateColour.innerHTML = "You have selected blue. 💙"
+                }
+            } else {
+                updateColour.innerHTML = ""
+            }
+        }
+        let colourSelect = document.querySelector("#colours")
+        colourSelect.addEventListener("change",colourPrompt)
+    </script>
+
+</body>
+</html>

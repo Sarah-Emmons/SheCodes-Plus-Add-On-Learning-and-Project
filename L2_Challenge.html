@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML Input Types</h1>
+    <hr>
+    <h3>Challenge 1</h3>
+    <p>
+      Create a search input with a label "What's on your mind?"
+    </p>
+    <br>
+    <h4>Solution</h4>
+    <label for="mind">What's on your mind?</label><input type="text" id="mind">
+    <br>
+    <br>
+    <hr>
+    <h3>Challenge 2</h3>
+    <p>
+      Create a form with a date input asking "What is your birth date?", a
+      submit button "Submit" and the form should send the date to /submit
+    </p>
+    <br>
+    <h4>Solution</h4>
+    <form action="/submit">
+        <label for="birthday">What is your birth date?</label><input type="date" id="birthday" name="birthday"><input type="submit" value="Submit">
+    </form>    
+    <br>
+    <hr>
+    <h3>Challenge 3</h3>
+    <p>
+      Create radio inputs asking "What is your favorite primary color?" with
+      blue, yellow and red as options
+    </p>
+    <br>
+    <h4>Solution</h4>
+    <h5>What is your favourite primary colour?</h3>
+        <label for="yellow">Yellow</label><input type="radio" id="yellow" name="colours">
+        <label for="blue">Blue</label><input type="radio" id="blue" name="colours">
+        <label for="red">Red</label><input type="radio" id="red" name="colours">
+    <br>
+    <br>
+    <hr>
+    <h3>Challenge 4</h3>
+    <p>
+      Create checkbox inputs asking "How do you like to travel?" with plane,
+      bus, train, car, walking as options
+    </p>
+    <h4>Solution</h4>
+    <h5>How do you like to travel?</h5>
+    <input type="checkbox" name="travel" id="plane"><label for="plane">Plane</label>
+    <input type="checkbox" name="travel" id="bus"><label for="bus">Bus</label>
+    <input type="checkbox" name="travel" id="train"><label for="train">Train</label>
+    <input type="checkbox" name="travel" id="car"><label for="car">Car</label>
+    <input type="checkbox" name="travel" id="walking"><label for="walking">Walking</label>
+    <br>
+    <br>
+    <div><input type="submit" value="Submit"></div>
+    <hr>
+
+</body>
+</html>

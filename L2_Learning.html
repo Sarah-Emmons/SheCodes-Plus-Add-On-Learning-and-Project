@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Inputs</title>
+    <style>
+        input {
+            padding: 2px;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Label Inputs</h1>
+    <h2>Type 1</h2>
+    <label for="first-name">What is your first name?</label>
+    <input type="text" id="first-name">
+    <br>
+    <h2>Type 2</h2>
+    <input type="text" placeholder="What is your first name?" id="">
+    <hr>
+
+    <h1>Input types</h1>
+    <h2>Type 1 - Text</h2>
+    <input type="text" placeholder="TEXT">
+    <br>
+    <h2>Type 2 - Number</h2>
+    <input type="number" placeholder="NUMBER">
+    <br>
+    <h2>Type 3 - Search</h2>
+    <input type="search" placeholder="SEARCH">
+    <br>
+    <h2>Type 4 - Time</h2>
+    <input type="time" placeholder="TIME">
+    <br>
+    <h2>Type 5 - Color</h2>
+    <input type="color" placeholder="COLOUR">
+    <br>
+    <h2>Type 6 - URL</h2>
+    <input type="url" placeholder="URL">
+    <br>
+    <h2>Type 7 - Email</h2>
+    <input type="email" placeholder="EMAIL">
+    <br>
+    <h2>Type 8 - Submit</h2>
+    <input type="submit" placeholder="SUBMIT">
+    <br>
+    <h2>Type 9 - Date</h2>
+    <input type="date" placeholder="DATE">
+    <br>
+    <h2>Type 10 - Radio</h2>
+    <h3>Favourite pet?</h3>
+    <label for="cat">Cats</label><input type="radio" id="cat" name="pet">
+    <label for="dog">Dogs</label><input type="radio" id="dog" name="pet">
+    <label for="turtle">Turtles</label><input type="radio" id="turtle" name="pet">
+    <br>
+    <h2>Type 11 - Checkbox</h2>
+    <h3>What pets do you have?</h3>
+    <input type="checkbox" name="pets" id="cat"><label for="cat">Cat</label>
+    <input type="checkbox" name="pets" id="dog"><label for="dog">Dog</label>
+    <input type="checkbox" name="pets" id="turtle"><label for="turtle">Turtle</label>
+    <input type="checkbox" name="pets" id="parrot"><label for="parrot">Parrot</label>
+    <input type="checkbox" name="pets" id="iguana"><label for="iguana">Iguana</label>
+    <br>
+    <div><input type="submit" value="Submit"></div>
+    <br>
+    <hr>
+
+    <h1>Example Form Input</h1>
+    <form action="/submit">
+        <label for="email-enter">What is your email address?</label>
+        <input type="email" placeholder="sarah@shecodes.io" id="email-enter" name="email">
+        <!--Name is for backend!-->
+        <input type="submit" value="Sign Up">
+    </form>
+</body>
+</html>

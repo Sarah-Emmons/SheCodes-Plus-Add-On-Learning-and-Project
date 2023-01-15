@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Time Zones</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.40/moment-timezone-with-data-1970-2030.min.js"></script>
+</head>
+<body>
+    <div id="la"></div>
+    <div id="sydney"></div>
+    <div id="tokyo"></div>
+    <div id="local"></div>
+    <script>
+        let LA = moment().tz("America/Los_Angeles").format("dddd HH:mm, YYYY");
+        let Sydney = moment().tz("Australia/Sydney").format("dddd HH:mm, YYYY");
+        let Tokyo = moment().tz("Asia/Tokyo").format("dddd HH:mm, YYYY");
+        let timezoneOne = document.querySelector("#la");
+        let timezoneTwo = document.querySelector("#sydney");
+        let timezoneThr = document.querySelector("#tokyo");
+        timezoneOne.innerHTML = `The time in Los Angeles is ${LA}.`;
+        timezoneTwo.innerHTML = `The time in Sydney is ${Sydney}.`;
+        timezoneThr.innerHTML = `The time in Tokyo is ${Tokyo}.`;
+
+        let localTimezone = moment.tz.guess();
+        let localElement = document.querySelector("#local");
+        localElement.innerHTML = `Your current timezone is ${localTimezone} and the current time is ${moment().format("HH:mm")}.`
+
+    </script>
+</body>
+</html>

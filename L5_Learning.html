@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Date Formats</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+</head>
+<body>
+    <!--JS Libraries = Plugins = frameworks, etc.-->
+    <div id="today"></div>
+    <div id="tomorrow"></div>
+    <script>
+        let today = moment().format("dddd, MMMM Do");
+        let tomorrow = moment().add(1, "day").format("dddd, MMMM Do");
+        let todayElement = document.querySelector("#today");
+        let tomorrowElement = document.querySelector("#tomorrow");
+        //console.log(today);
+        //console.log(tomorrow);
+        todayElement.innerHTML = `Today is ${today}.`;
+        tomorrowElement.innerHTML = `Tomorrow is ${tomorrow}.`;
+    </script>
+</body>
+</html>

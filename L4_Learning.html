@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Timing Events</title>
+</head>
+<body>
+    <div id="hello">Hello, world!</div>
+    <div id="date"></div>
+    <script>
+        //Example 1
+        function sayHello(){
+            let helloBox = document.querySelector("#hello")
+            helloBox.innerHTML = "こんにちは世界! (Konnichiwa Sekai!)";
+        }
+
+        setTimeout(sayHello, 3000); //Runs function in first argument after number of milliseconds in second argument.
+
+        //Example 2
+        function dateUpdate() {
+            let date = document.querySelector("#date");
+            date.innerHTML = new Date();
+        }
+
+        time = setInterval(dateUpdate, 1000);
+    </script>
+</body>
+</html>

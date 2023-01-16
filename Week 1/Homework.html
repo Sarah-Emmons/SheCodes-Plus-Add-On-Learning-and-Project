@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time zone Dropdown</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.40/moment-timezone-with-data-1970-2030.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+        .container {
+           background: #e2e2e2;
+           text-align: center;
+           width: 50%;
+           border: 1px solid black;
+           border-radius: 5px;
+           margin: 0 auto;
+        }
+        select {
+            border: 1px solid #2f3337;
+            background: #2f3337;
+            border-radius: 5px;
+            color: #ffffff;
+            display: block;
+            margin: 10px auto;
+        }
+        #city {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>What time is it?</h1>
+        <label for="cities">What city do you want the time for?</label>
+        <select name="" id="cities">
+            <option value="" selected>Select a city</option>
+            <option value="paris">Paris</option>
+            <option value="tokyo">Tokyo</option>
+            <option value="sydney">Sydney</option>
+        </select>
+        <div id="city"></div>
+    </div>
+    <script>
+        function tzUpdates(event) {
+            let cityZone = null
+            if(event.target.value == "paris") {
+                cityZone = "Europe/Paris";
+            }   if(event.target.value == "tokyo") {
+                   cityZone = "Asia/Tokyo";
+                } if(event.target.value == "sydney") {
+                    cityZone = "Australia/Sydney"
+                }
+
+            let timeZone = moment.tz(`${cityZone}`).format("dddd, MMMM D, YYYY h:mm A")
+            let city = document.querySelector("#city")
+            
+            if(event.target.value.length > 0) {
+                //console.log(timeZone);
+                //console.log(event.target.value);
+                //console.log(cityZone);
+                alert(`It is ${timeZone} in ${cityZone}.`)
+                city.innerHTML = `It is ${timeZone} in ${cityZone}.`
+            } else {city.innerHTML = ""}
+        }
+
+        let citySelect = document.querySelector("#cities")
+        citySelect.addEventListener("change",tzUpdates)
+    </script>
+</body>
+</html>
